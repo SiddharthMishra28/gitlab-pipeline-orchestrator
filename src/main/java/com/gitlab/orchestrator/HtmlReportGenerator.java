@@ -18,7 +18,7 @@ import java.util.Map;
 public class HtmlReportGenerator {
     private static final Logger logger = LoggerFactory.getLogger(HtmlReportGenerator.class);
     private static final DateTimeFormatter TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-    private static final String REPORT_FILE = "pipeline-report.html";
+    private static final String REPORT_FILE = "flow-forge-report.html";
 
     /**
      * Generates an HTML report for all pipeline results.
@@ -37,7 +37,7 @@ public class HtmlReportGenerator {
                 .append("<head>\n")
                 .append("    <meta charset=\"UTF-8\">\n")
                 .append("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n")
-                .append("    <title>GitLab Pipeline Execution Report</title>\n")
+                .append("    <title>Flow Forge Execution Report</title>\n")
                 .append("    <style>\n")
                 .append("        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }\n")
                 .append("        h1 { color: #2e86de; text-align: center; margin-bottom: 30px; }\n")
@@ -62,7 +62,7 @@ public class HtmlReportGenerator {
                 .append("</head>\n")
                 .append("<body>\n")
                 .append("    <div class=\"report-container\">\n")
-                .append("        <h1>GitLab Pipeline Execution Report</h1>\n");
+                .append("        <h1>Flow Forge Execution Report</h1>\n");
             
             // Add each pipeline result
             for (PipelineResult result : results) {
@@ -157,6 +157,7 @@ public class HtmlReportGenerator {
         // Add Chart.js
         chart.append("            <script src=\"https://cdn.jsdelivr.net/npm/chart.js\"></script>\n")
             .append("            <canvas id=\"pipelineChart\" width=\"400\" height=\"200\"></canvas>\n")
+            .append("            <h4>Developed By : <a href=\"mailto:connectwithsiddharthm@gmail.com\">Siddharth Mishra</a></h4>\n")
             .append("            <script>\n")
             .append("                const ctx = document.getElementById('pipelineChart').getContext('2d');\n")
             .append("                const pipelineLabels = [");
