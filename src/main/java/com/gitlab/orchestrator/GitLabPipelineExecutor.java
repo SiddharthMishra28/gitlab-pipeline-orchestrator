@@ -31,8 +31,16 @@ public class GitLabPipelineExecutor {
      * @param args Command line arguments
      */
     public static void main(String[] args) {
-        logger.info("Starting GitLab Pipeline Executor");
-        
+        System.out.println("/        |/  |       /      \\ /  |  _  /  |      /        |/      \\ /       \\  /      \\ /        |\n" +
+                "$$$$$$$$/ $$ |      /$$$$$$  |$$ | / \\ $$ |      $$$$$$$$//$$$$$$  |$$$$$$$  |/$$$$$$  |$$$$$$$$/ \n" +
+                "$$ |__    $$ |      $$ |  $$ |$$ |/$  \\$$ |      $$ |__   $$ |  $$ |$$ |__$$ |$$ | _$$/ $$ |__    \n" +
+                "$$    |   $$ |      $$ |  $$ |$$ /$$$  $$ |      $$    |  $$ |  $$ |$$    $$< $$ |/    |$$    |   \n" +
+                "$$$$$/    $$ |      $$ |  $$ |$$ $$/$$ $$ |      $$$$$/   $$ |  $$ |$$$$$$$  |$$ |$$$$ |$$$$$/    \n" +
+                "$$ |      $$ |_____ $$ \\__$$ |$$$$/  $$$$ |      $$ |     $$ \\__$$ |$$ |  $$ |$$ \\__$$ |$$ |_____ \n" +
+                "$$ |      $$       |$$    $$/ $$$/    $$$ |      $$ |     $$    $$/ $$ |  $$ |$$    $$/ $$       |\n" +
+                "$$/       $$$$$$$$/  $$$$$$/  $$/      $$/       $$/       $$$$$$/  $$/   $$/  $$$$$$/  $$$$$$$$/ ");
+        logger.info("Starting GitLab Pipeline Executor Service");
+
         // Determine CSV file path from arguments or use default
         String csvFilePath = DEFAULT_CSV_PATH;
         if (args.length > 0) {
@@ -66,7 +74,7 @@ public class GitLabPipelineExecutor {
             logger.error("Unexpected error: {}", e.getMessage(), e);
         }
         
-        logger.info("GitLab Pipeline Executor completed");
+        logger.info("GitLab Pipeline Executor Service Completed");
     }
 
     /**
